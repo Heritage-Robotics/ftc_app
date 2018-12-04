@@ -70,5 +70,5 @@ public abstract class Subsystem extends Thread
         }
     }
 
-    boolean isSubsystemActive() { return _isSubsystemActive; }
+    public boolean isSubsystemActive() { return _isSubsystemActive; }
 }
