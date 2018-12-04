@@ -11,6 +11,8 @@ import org.firstinspires.ftc.teamcode.util.subsystem.Subsystem;
 
 public class DriveTrain extends Subsystem
 {
+    private final DcMotor.ZeroPowerBehavior DEFAULT_ZERO_POWER_BEHAVIOR = DcMotor.ZeroPowerBehavior.BRAKE;
+
     private DcMotor _leftA, /*_leftB,*/ _rightA/*, _rightB*/;
     private OpMode _opmode;
     private Gamepad gpad1, gpad2;
@@ -98,6 +100,8 @@ public class DriveTrain extends Subsystem
 
     private void reset()
     {
-
+        setMotors(0, 0);
+        _leftA.setZeroPowerBehavior(DEFAULT_ZERO_POWER_BEHAVIOR);
+        _rightA.setZeroPowerBehavior(DEFAULT_ZERO_POWER_BEHAVIOR);
     }
 }
